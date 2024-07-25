@@ -1,0 +1,46 @@
+Vivek Govardhana
+
+Hyderabad, IN 501510
+9618743913
+govardhanavivek32@gmail.com
+
+Professional Summary
+
+As a dedicated and skilled Chabot Developer , I bring over 1.7 years of experience in Virtual Assistance and Chabot Industry. My expertise lies in Python, Javascript , Dialogflow, Chatbot worflow Development,NLP . I am passionate about Chatbot and LLM Engineer, and I continuously strive to achieve excellence in every project I undertake. My strengths include Positive and winner mindset , which have significantly contributed and improved my technical skills and communication skills . I am committed to work efficiently and productively, and I thrive in dynamic environments where I can leverage my skills to drive innovative solutions and deliver exceptional results. My core competencies include Deep learning,Machine learning , Chatbots,NLP frameworks,Python and I am eager to bring my knowledge and enthusiasm to a forward-thinking organization where I can further develop my career.
+
+Skills
+
+Object-Oriented Programming
+Software development methodologies
+Programming Languages : Python, Javascript
+Database programming : MongoDb,Mysql
+Chabot development : Kore.ai , Dialog flow
+
+Natural language processing (NLP) : Spacy, NLTK
+Deep learning and machine learning : Pytorch, numpy, Pandas, sklearn, matplotlib
+Problem Solving
+Data structures and Algorithms
+FastAPI
+
+Work History
+
+March 2023 - Current
+
+Mphasis and Kore.ai - Hyderabad
+Associate Software Engineer - Chatbot Developer
+
+1.7 years experience in chatbot development
+Streamlined code for faster load times and improved bot performance.
+Developed custom features and implementations and integrated into the bot
+Have a great command on both node.js/js and python in bot development
+Contributed to bug fixes, code improvement and data security
+Managed entire kore.ai product (searchassist.ai) from requirements gathering ,configurations to production application and achieved 80% accuracy results
+Implemented automation batch suite to increase productivity and to reduce developer efforts in unit testing
+
+Education
+
+March 2023
+Vignana Bharathi Institute Of Technology Gatkesar,Hyderabad
+Bachelor of Technology Information Technology
+
+Minor degree on IOT [2021-2023]
