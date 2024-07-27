@@ -9,7 +9,7 @@ from fastapi.staticfiles import StaticFiles
 
 from username import set_name, get_name
 from parser_resume import extract_text_from_pdf, load_text, preprocess_text, extract_text_from_txt, extract_text_from_docx
-from NLP import extract_skills,vectorize_text, compare_skills, generate_feedback, vectorize_text, compute_cosine_similarity
+from NLP import extract_skills,compute_skill_match_score, compare_skills, generate_feedback,extract_education
 
 app = FastAPI()
 
@@ -20,7 +20,7 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 
 @app.get("/", response_class=HTMLResponse)
 async def main():
-    index_file = os.path.join("static", "frontend", "index.html")
+    index_file = os.path.join("static", "index.html")
     async with aiofiles.open(index_file, 'r') as file:
         content = await file.read()
     return content
@@ -81,32 +81,32 @@ def process_uploaded_files(filename, job_description_path):
 
        
         
-
+        print(resume_text)
         # Extract and flatten skills
         resume_skills = extract_skills(resume_text)
         jd_skills = extract_skills(job_description_text)
+
+        education_in_resume = extract_education(resume_text)
+        education_in_jd = extract_education(job_description_text)
+        # print(education_in_resume,education_in_jd)
+        print("education resume" ,education_in_resume)
+        print("education jd" ,education_in_jd)
         resume_skills_text = ' '.join(resume_skills)
         jd_skills_text = ' '.join(jd_skills)
 
         print(f"Flattened Resume Skills: {resume_skills_text}")
         print(f"Flattened Job Description Skills: {jd_skills_text}")
+       
 
-        # Vectorize the flattened text
-        vectors = vectorize_text([resume_skills_text, jd_skills_text])
+        # resume_edu_text = ' '.join(education_in_resume)
+        # jd_edu_text = ' '.join(education_in_jd)
 
-        print(f"TF-IDF Vectors: {vectors}")
-
-        # Compute cosine similarity
-        similarity_matrix = compute_cosine_similarity(vectors[0:1], vectors[1:2])
-        print(f"Similarity Matrix: {similarity_matrix}")
-
-        # Handle similarity_matrix based on its type
-        if isinstance(similarity_matrix, np.ndarray):
-            similarity_score = similarity_matrix[0, 0] if similarity_matrix.size > 0 else None
-        else:
-            similarity_score = similarity_matrix  # Scalar value directly
-
-        print(f"Similarity Score: {similarity_score}")
+        # print(f"Flattened Resume Skills: {resume_edu_text}")
+        # print(f"Flattened Job Description Skills: {jd_edu_text}")
+        # similarity_score_edu = compute_education_score(resume_edu_text,jd_edu_text)
+        # print(similarity_score_edu)
+        similarity_score = compute_skill_match_score(resume_skills_text,jd_skills_text)
+        print(similarity_score)
 
         # Compare skills
         skills_comparison = compare_skills(resume_skills, jd_skills)
@@ -119,7 +119,7 @@ def process_uploaded_files(filename, job_description_path):
         # Generate feedback
         feedback = generate_feedback(skills_comparison["matched_skills"], skills_comparison["missing_skills"])
         feedback["similarity_score"] = similarity_score
-
+        print(feedback["similarity_score"])
         return feedback
 
     except Exception as e:
@@ -131,40 +131,6 @@ def process_uploaded_files(filename, job_description_path):
 
 if __name__ == "__main__":
     uvicorn.run("0.0.0.0",port=3000)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

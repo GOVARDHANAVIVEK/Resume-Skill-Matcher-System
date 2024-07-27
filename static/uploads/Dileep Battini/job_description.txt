@@ -1,0 +1,10 @@
+ Experience and exposure to Python/Scala, Spark(tuning jobs), SQL, Hadoop platforms to build Big Data products & platforms
+ Experience with data pipeline and workflow management tools: NIFI, Airflow.
+ Comfortable in developing shell scripts for automation
+ Proficient in standard software development, such as version control, testing, and deployment
+ Demonstrated basic knowledge of statistical analytical techniques, coding, and data engineering
+ Curiosity, creativity, and excitement for technology and innovation
+ Demonstrated quantitative and problem-solving abilities
+ Motivation, flexibility, self-direction, and desire to thrive on small project teams
+ Good communication skills - both verbal and written – and strong relationship, collaboration skills, and organizational skills
+ At least a Bachelors degree in Computer Architecture, Computer Science, Electrical Engineering or equivalent experience. Postgraduate degree is an advantage
